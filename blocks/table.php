@@ -6,21 +6,21 @@
         $content = '';
 
         if ($columnNumber < 9) {
-            $firstNumber = '<a href="/?selected_number='.$currentNumber.'&selected_layout='.$_GET['selected_layout'].'">'.$currentNumber.'</a>';
-            $secondNumber = '<a href="/?selected_number='.$selectedNumber.'&selected_layout='.$_GET['selected_layout'].'">'.$selectedNumber.'</a>';
+            $firstNumber = '<a href="/?selected_number='.$currentNumber.'">'.$currentNumber.'</a>';
+            $secondNumber = '<a href="/?selected_number='.$selectedNumber.'">'.$selectedNumber.'</a>';
             $answer = $currentNumber * $selectedNumber;
             if ($answer <= 9) {
-                $answer = '<a href="/?selected_number='.$answer.'&selected_layout='.$_GET['selected_layout'].'">'.$answer.'</a>';
+                $answer = '<a href="/?selected_number='.$answer.'">'.$answer.'</a>';
             };
             $expression = $firstNumber.'*'.$secondNumber.'='.$answer;
             $content = $content.$openingTag.$expression.$closingTag;
         } else {
             for ($i=1; $i <= $columnNumber; $i++) {
-                $firstNumber = '<a href="/?selected_number='.$currentNumber.'&selected_layout='.$_GET['selected_layout'].'">'.($currentNumber).'</a>';
-                $secondNumber = '<a href="/?selected_number='.$i.'&selected_layout='.$_GET['selected_layout'].'">'.$i.'</a>';
+                $firstNumber = '<a href="/?selected_number='.$currentNumber.'">'.($currentNumber).'</a>';
+                $secondNumber = '<a href="/?selected_number='.$i.'">'.$i.'</a>';
                 $answer = $currentNumber * $i;
                 if ($answer <= 9) {
-                    $answer = '<a href="/?selected_number='.$answer.'&selected_layout='.$_GET['selected_layout'].'">'.$answer.'</a>';
+                    $answer = '<a href="/?selected_number='.$answer.'">'.$answer.'</a>';
                 };
                 $expression = $firstNumber.'*'.$secondNumber.'='.$answer;
                 $content = $content.$openingTag.$expression.$closingTag;
